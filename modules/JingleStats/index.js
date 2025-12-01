@@ -33,7 +33,7 @@ module.exports = {
 
         // Stats!
         const total = jaffamod.utils.getBold(formatMoney('£', res.data.raised), discord);
-        const average = jaffamod.utils.getBold(formatMoney('£', res.data.raised / res.data.donations.count), discord);
+        const average = jaffamod.utils.getBold(formatMoney('£', res.data.raised / res.data.donations), discord);
 
         const collections = jaffamod.utils.getBold(res.data.collections.redeemed.toLocaleString(), discord);
         const perCollection = jaffamod.utils.getBold(formatMoney('£', res.data.raised / res.data.collections.redeemed), discord);

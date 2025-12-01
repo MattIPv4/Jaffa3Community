@@ -35,10 +35,8 @@ const validateResponse = res => {
     return 'Response#data#collections does not contain a redeemed number';
 
   // Validate the donations data
-  if (!hasKey(res.data, 'donations') || !isObject(res.data.donations))
+  if (!hasKey(res.data, 'donations') || typeof res.data.donations !== 'number')
     return 'Response#data does not contain a donations object';
-  if (!hasKey(res.data.donations, 'count') || typeof res.data.donations.count !== 'number')
-    return 'Response#data#donations does not contain a count number';
 
   // Validate the history data
   if (!hasKey(res.data, 'history') || !Array.isArray(res.data.history))

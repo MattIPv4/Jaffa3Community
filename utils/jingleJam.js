@@ -28,6 +28,10 @@ const validateResponse = res => {
   if (!hasKey(res.data, 'raised') || typeof res.data.raised !== 'number')
     return 'Response#data does not contain a raised number';
 
+  // Validate the conversion rate data
+  if (!hasKey(res.data, 'dollarConversionRate') || typeof res.data.dollarConversionRate !== 'number')
+    return 'Response#data does not contain an dollarConversionRate number';
+
   // Validate the collections data
   if (!hasKey(res.data, 'collections') || !isObject(res.data.collections))
     return 'Response#data does not contain a collections object';

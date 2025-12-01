@@ -26,7 +26,7 @@ module.exports = {
 
         // Process data
         const totalRaised = jaffamod.utils.getBold(formatMoney('£', res.data.raised), discord);
-        const totalRaisedUsd = jaffamod.utils.getBold(formatMoney('$', res.data.raised * res.data.avgConversionRate), discord);
+        const totalRaisedUsd = jaffamod.utils.getBold(formatMoney('$', res.data.raised * res.data.dollarConversionRate), discord);
 
         // Message for collection being active
         if (now < jingleDates.end)
